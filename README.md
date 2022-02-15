@@ -9,4 +9,4 @@ the company owner with a formatted email when a client submits a new service req
 
 While not currently live, this project tested my skills in HTML, CSS, JS, PHP, and Linux Command Line.
 This project also taught me a good bit regarding networking and hosting, as I was able to host this
-webapp on my personal domain while testing.
+webapp on my personal domain for remote testing.
