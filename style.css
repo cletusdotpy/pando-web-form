@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: center / cover no-repeat url("imgs/blurgreen.jpg");
+  font-family: 'Dongle', sans-serif;
+  min-height: 100vh;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+
+
+/*************Responsive text****************/
+h1,
+h2 {
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  font-family: 'Dongle', sans-serif;
+  text-align: center;
+  margin-top: 3.25rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  padding-top: 2rem;
+  padding-bottom: 1.25rem;
+  color: rgb(53, 53, 53);
+  width: 85%;
+}
+
+p {
+  font-size: clamp(1.25rem, 1.75vw, 2.5rem);
+  font-family: 'Dongle', sans-serif;
+}
+
+
+
+/*************Responsive text end****************/
+
+/*
+.boldText {
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+
+/* vv Change appropriate text opacity on icon hover  vv */
+/* Guess this requires a bunch of repeat shit
+   since font needs to be changed on a per ID
+   basis instead of class (aka I omitted the
+   entries for classes .icontxt and .firstIcon */ 
+#lawnText {
+  font-weight: bold;
+  opacity: 0.4;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+#lawnIcon:hover + #lawnText {
+  opacity: 0.8;
+  transition: 1.0s;
+  font-weight: bolder
+}
+#lawnIcon {
+  opacity: 0.6;
+}
+#lawnIcon:hover {
+  opacity: 1;
+  transition: 0.5s;
+  transform: scale(1.02);
+}
+
+#outdoorText {
+  font-weight: bold;
+  opacity: 0.4;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+#outdoorIcon:hover + #outdoorText {
+  opacity: 0.8;
+  transition: 1.0s;
+  font-weight: bolder
+}
+#outdoorIcon {
+  opacity: 0.6;
+}
+#outdoorIcon:hover {
+  opacity: 1;
+  transition: 0.5s;
+  transform: scale(1.02);
+}
+
+#drainText {
+  font-weight: bold;
+  opacity: 0.4;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+#drainIcon:hover + #drainText {
+  opacity: 0.8;
+  transition: 1.0s;
+  font-weight: bolder
+}
+#drainIcon {
+  opacity: 0.6;
+}
+#drainIcon:hover {
+  opacity: 1;
+  transition: 0.5s;
+  transform: scale(1.02);
+}
+
+/* Done with that now */
+/* LOL SIKE gonna try this same effect for checkboxes */
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slideable-form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 95%;
+  transition: 0.5s;
+}
+
+.container {
+  margin-top: 5%;
+  width: 80vw;
+  min-height: 90vh;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 10px 10px 5px rgb(41, 97, 36);
+}
+
+/* COMMENTED THIS CLASS OUT TO GIVE PRIORITY TO IDS
+.firsticon {
+  opacity: 0.6;
+}
+
+.firsticon:hover {
+  opacity: 1;
+  transition: 0.5s;
+  transform: scale(1.02);
+}
+*/
+
+.iconcontainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.iconcontainer img {
+  width: 50%;
+}
+
+.iconcontainer img:hover {
+  cursor: pointer;
+}
+
+/* /* COMMENTED THIS CLASS OUT TO GIVE PRIORITY TO IDS
+.icontxt {
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+*/
+
+.slide-left {
+  transform: translateX(-100%);
+}
+
+/* Remove arrows from phone field */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.iconcontainer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container form {
+  position: absolute;
+  transition: 0.5s;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkbox-container {
+  width: 150%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin: 0.1rem 0;
+  background: rgba(201, 201, 201, 0.171);
+}
+.checkbox-container:hover{
+  background: rgba(201, 201, 201, 0.575);
+  transform: scale(1.01);
+  transition: .5s;
+}
+
+
+.checkboxes label {
+  margin-right: 2rem;
+  padding-left: 2rem;
+  padding-right: .2rem;
+}
+
+
+.info-container {
+  margin-top: 2rem;
+  width: 80%;
+  height: 60%;
+}
+
+.info-container input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  border: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+}
+
+form button {
+  width: 40%;
+  height: 2.5rem;
+  margin: 0 0.5rem;
+  background: rgba(36, 202, 58, 0.9);
+  border-radius: 1.25rem;
+  border: 0;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.8;
+  font-size: clamp(.5rem, 1vw, 1.5rem);
+}
+
+form button:hover {
+  transform: scale(1.02);
+  transition: 0.5s;
+  opacity: 1;
+}
+
+form button:active {
+  transform: scale(0.98);
+  transition: 0.5s;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 25%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+
+/* Start all of the forms on the right of the screen */
+#lawnform,
+#outdoorform,
+#constructionform,
+#personinfo,
+#addrinfo {
+  transform: translateX(100%);
+}
+
+.step-row {
+  width: 100%;
+  height: 2.5rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -0.1rem 0.5rem -0.1rem #000;
+  position: relative;
+}
+.step-col {
+  width: 25%;
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+
+#progress {
+  position: absolute;
+  height: 100%;
+  width: 25%;
+  background: rgba(36, 202, 58, 0.9);
+  transition: 1s;
+}
+#progress::after {
+  content: "";
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  border-left: 20px solid rgba(36, 202, 58, 0.9);
+}
+
+/************** Media Queries ************/
+@media (min-width: 900px) {
+  .container {
+    width: 60vw;
+    min-height: 75vh;
+  }
+
+  .iconcontainer {
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .iconcontainer > div {
+    width: 33%;
+    text-align: center;
+  }
+
+  .iconcontainer img {
+    width: 50%;
+  }
+
+  .info-container {
+    margin-top: 5%;
+    width: 50%;
+    height: 60%;
+  }
+
+  form button {
+    width: 25%;
+    margin: 0 1rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    width: 40vw;
+  }
+
+  .iconcontainer img {
+    width: 50%;
+  }
+}

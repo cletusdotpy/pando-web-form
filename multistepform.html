@@ -1,0 +1,219 @@
+<!--This is a webapp that will allow users to register for lawncare service
+by navigating through a 4 step form.-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Service Request</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
+    </style> 
+
+</head>
+
+<body>
+    <form action="process.php" method="POST" class="form-container">
+        <div class="container">
+            <!-- This container holds multiple "slideable-forms" that 
+            are offset to the right of the screen until they are the 
+            "active" page in the wizard -->
+            <div class="slideable-form" id="form1">
+                <h1>Welcome! Ready to make Lawn Care easier?</h1>
+                <div class=iconcontainer>
+                    <div>
+                        <img src="imgs/tree.png" id="lawnIcon" class="firsticon" alt="tree" onclick="firstLawn()">
+                        <div id="lawnText" class=icontxt>
+                            <p class="boldText">Lawn & Garden</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="imgs/table.png" id="outdoorIcon" class="firsticon" alt="patio furniture" onclick="firstOutdoor()">
+                        <div id="outdoorText" class=icontxt>
+                            <p class="boldText">Outdoor Living</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="imgs/hat.png" id="drainIcon" class="firsticon" alt="hardhat" onclick="firstDrain()">
+                        <div id="drainText" class=icontxt>
+                            <p class="boldText">Drainage & Construction</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <!--The following 3 slideable forms move from the right side of the screen (hidden)
+                to the middle of the screen while the previous slideable form repositions to
+                the left. Which of the 3 comes into the center depends on which of "firstLawn()",
+                "firstOutdoor()", or "firstDrain()" is triggered by first page icon onclick's -->
+            <div class="slideable-form" id="lawnform">
+                <h1>How can we help you?</h1>
+                <div class="checkboxes">
+                    <div class="checkbox-container">
+                        <label for="LawnMowing" id="LawnMowingTxt">Lawn Mowing</label>
+                        <input type="checkbox" id="LawnMowing" name="LawnMowing">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="SeasonalCleanup">Seasonal Cleanup</label>
+                        <input type="checkbox" id="SeasonalCleanup" name="SeasonalCleanup">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="Pruning">Pruning</label>
+                        <input type="checkbox" id="Pruning" name="Pruning">
+                    </div>
+                    <div class="checkbox-container">
+                        <!-- Consider changing name, id, and 'label for' to mulching -->
+                        <label for="Multching">Mulching</label>
+                        <input type="checkbox" id="Multching" name="Multching">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="Gardening">Gardening</label>
+                        <input type="checkbox" id="Gardening" name="Gardening">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="WeedControl">Weed Control</label>
+                        <input type="checkbox" id="WeedControl" name="WeedControl">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="Fertilizing">Fertilizing</label>
+                        <input type="checkbox" id="Fertilizing" name="Fertilizing">
+                    </div>
+                </div>
+                <!--The "btn-box" at the bottom of each slideable form call for various
+                    functions that all serve the same general purpose: determining
+                    the appropriate slideable forms to be moved left or right-->
+                <div class="btn-box">
+                    <button type="button" class="navbtn" id="back2" onclick="firstLawnBack()">Back</button>
+                    <button type="button" class="navbtn" id="next2" onclick="lawnNext()">Next</button>
+                </div>
+            </div>
+
+            <!-- Next Slideable Form for "construction"-->
+
+            <div class="slideable-form" id="constructionform">
+                <h2>How can we help you?</h2>
+                <div class="checkboxes">
+                    <div class="checkbox-container">
+                        <label for="Earthwork">Earthwork</label>
+                        <input type="checkbox" id="Earthwork" name="Earthwork">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="Stormwater">Stormwater Management</label>
+                        <input type="checkbox" id="Stormwater" name="Stormwater">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="Structure">Structural Walls</label>
+                        <input type="checkbox" id="Structure" name="Structure">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="Trees">Tree Removal</label>
+                        <input type="checkbox" id="Trees" name="Trees">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="Sites">Site Development</label>
+                        <input type="checkbox" id="Sites" name="Sites">
+                    </div>
+                </div>
+
+                <div class="btn-box">
+                    <button type="button" class="navbtn" id="back3" onclick="firstDrainBack()">Back</button>
+                    <button type="button" class="navbtn" id="next3" onclick="drainNext()">Next</button>
+                </div>
+            </div>
+
+            <!-- "outdoor" Slideable form-->
+
+            <div class="slideable-form" id="outdoorform">
+                <h2>How can we help you?</h2>
+                <div class="checkboxes">
+                    <div class="checkbox-container">
+                        <label for="PatiosWalls">Patios / Walls</label>
+                        <input type="checkbox" id="PatiosWalls" name="PatiosWalls">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="OutdoorFireplace">Outdoor Fireplaces</label>
+                        <input type="checkbox" id="OutdoorFireplace" name="OutdoorFireplace">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="OutdoorKitchen">Outdoor Kitchens</label>
+                        <input type="checkbox" id="OutdoorKitchen" name="OutdoorKitchen">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="DesignService">Design Services</label>
+                        <input type="checkbox" id="DesignService" name="DesignService">
+                    </div>
+                    <div class="checkbox-container">
+                        <label for="LandscapeLight">Landscape Lighting</label>
+                        <input type="checkbox" id="LandscapeLight" name="LandscapeLight">
+                    </div>
+                </div>
+
+                <div class="btn-box">
+                    <button type="button" class="navbtn" id="back4" onclick="firstOutdoorBack()">Back</button>
+                    <button type="button" class="navbtn" id="next4" onclick="outdoorNext()">Next</button>
+                </div>
+            </div>
+
+            <!-- Address Information Sliding Form-->
+
+            <div class="slideable-form" id="addrinfo">
+                <h2>Where is this property located?</h2>
+                <div class="info-container">
+                    <input type="text" placeholder="Street Address" required name="addr">
+                    <input type="text" placeholder="City" required name="city">
+                    <input type="number" placeholder="Zip Code" required name="zip" id="zipentry">
+
+
+                </div>
+                <div class="btn-box">
+                    <button type="button" class="navbtn" id="backaddr" onclick="addrback()">Back</button>
+                    <button type="button" class="navbtn" id="nextaddr" onclick="addrnext()">Next</button>
+                </div>
+
+            </div>
+
+            <!-- Contact Info Sliding Form -->
+
+            <div class="slideable-form" id="personinfo">
+                <h2>Last step! Some information about you:</h2>
+                <div class="info-container">
+                    <input type="text" placeholder="First Name" required name="fname">
+                    <input type="text" placeholder="Last Name" required name="lname">
+                    <input type="number" min="1000000000" max="9999999999" placeholder="Phone Number" required
+                        name="phone">
+                    <input type="text" placeholder="Email" required name="email">
+
+
+                </div>
+                <div class="btn-box">
+                    <button type="button" class="navbtn" id="back5" onclick="fourthBack()">Back</button>
+                    <button type="submit" class="navbtn">Submit</button>
+                </div>
+            </div>
+
+            <!-- This is the progress bar at the top of the form -->
+
+            <div class="step-row">
+                <div id="progress"></div>
+                <div class="step-col">Step 1</div>
+                <div class="step-col">Step 2</div>
+                <div class="step-col">Step 3</div>
+                <div class="step-col">Step 4</div>
+            </div>
+
+        </div>
+    </form>
+
+    <script src="form.js">
+    </script>
+
+</body>
+
+</html>
