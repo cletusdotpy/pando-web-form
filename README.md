@@ -14,6 +14,6 @@ webapp on my personal domain for remote testing.
 Should this project be revived, I plan to scrap the use of text files (purged every night at midnight for security)
 and instead post to an actual database now that I've started learning SQL.
 
-DISCLAIMER: Reactive design was implemented by an outsourced programmer. I am currently learning reactive front end through 
+DISCLAIMER: Reactive design was implemented by an outsourced programmer (www.curlycoder.com). I am currently learning reactive front end through 
 the building of my portfolio website (as of 2/15/2022). Whether or not I come back to edit this readme upon completion of 
 such is a mystery.
